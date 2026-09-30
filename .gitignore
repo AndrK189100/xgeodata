@@ -1,4 +1,4 @@
 *.exe
-  /dist/
-  /output/
-  /data/
+/dist/
+/output/
+/data/
