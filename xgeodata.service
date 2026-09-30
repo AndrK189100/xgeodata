@@ -1,0 +1,23 @@
+[Unit]
+Description=xgeodata - geosite.dat/geoip.dat generator for Xray
+After=network.target local-fs.target
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/xgeodata -in /etc/xray/sets -out /etc/xray/sets -api 127.0.0.1:8888 -watch
+WorkingDirectory=/usr/local/bin
+
+Restart=on-failure
+RestartSec=5
+
+User=root
+Group=root
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=xgeodata
+
+[Install]
+WantedBy=multi-user.target
