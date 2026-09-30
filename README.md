@@ -78,6 +78,7 @@ Put one file per list into the input directory:
 - `name.domain` goes to `geosite.dat` and is referenced in Xray as `geosite:name`
 - `name.cidr` goes to `geoip.dat` and is referenced in Xray as `geoip:name`
 
+<<<<<<< HEAD
 One entry per line.
 
 `*.cidr` example (`examples/ip.cidr`):
@@ -102,21 +103,45 @@ regexp:^contoso\.com$
 | `full:host`       | exact host name only                     |
 | `keyword:text`    | any domain containing the text           |
 | `regexp:pattern`  | domain matching the regular expression   |
+=======
+<!-- TODO: describe the exact line format you support (one entry per line, prefixes such as domain:/full:/regexp: if any, comments, blank lines) and add a couple of files to examples/ -->
+>>>>>>> 86e49e45e610e4d5efbb7c0221e4b9bb7c185c22
 
 Files with other extensions are ignored.
 
 ## Xray configuration
 
+<<<<<<< HEAD
 Xray must expose its API with `RoutingService` **and** `ReflectionService` enabled (the reflection service is required for the call to work). A minimal example:
+=======
+Xray must expose its API with `RoutingService` enabled. A minimal example:
+>>>>>>> 86e49e45e610e4d5efbb7c0221e4b9bb7c185c22
 
 ```json
 {
   "api": {
     "tag": "api",
+<<<<<<< HEAD
     "listen": "127.0.0.1:8888",
     "services": [
       "ReflectionService",
       "RoutingService"
+=======
+    "services": ["RoutingService"]
+  },
+  "inbounds": [
+    {
+      "tag": "api-in",
+      "listen": "127.0.0.1",
+      "port": 8888,
+      "protocol": "dokodemo-door",
+      "settings": { "address": "127.0.0.1" }
+    }
+  ],
+  "routing": {
+    "rules": [
+      { "type": "field", "inboundTag": ["api-in"], "outboundTag": "api" }
+>>>>>>> 86e49e45e610e4d5efbb7c0221e4b9bb7c185c22
     ]
   }
 }
