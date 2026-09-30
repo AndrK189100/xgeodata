@@ -80,19 +80,37 @@ Put one file per list into the input directory:
 
 <!-- TODO: describe the exact line format you support (one entry per line, prefixes such as domain:/full:/regexp: if any, comments, blank lines) and add a couple of files to examples/ -->
 
+## Input files
+
+Put one file per list into the input directory, one entry per line:
+
+- `name.cidr` goes to `geoip.dat` and is referenced in Xray as `geoip:name`
+- `name.domain` goes to `geosite.dat` and is referenced in Xray as `geosite:name`
+
+Files with other extensions are ignored.
+
+### `*.cidr`
+
+```
 8.8.8.8/32
+1.1.0.0/16
+```
 
-1.1.1.0/16
+### `*.domain`
 
-
+```
 example.com
-
 full:www.example.com
-
 keyword:example
+regexp:^example\.com$
+```
 
-regexp: ^example\.com$
-
+| Entry            | Meaning                                |
+|------------------|----------------------------------------|
+| `example.com`    | the domain and its subdomains          |
+| `full:host`      | exact host name only                   |
+| `keyword:text`   | any domain containing the text         |
+| `regexp:pattern` | domain matching the regular expression |
 
 
 Files with other extensions are ignored.
