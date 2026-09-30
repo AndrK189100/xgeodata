@@ -73,15 +73,6 @@ The `.dat` files are generated at startup as well, so the first reload happens r
 
 ## Input files
 
-Put one file per list into the input directory:
-
-- `name.domain` goes to `geosite.dat` and is referenced in Xray as `geosite:name`
-- `name.cidr` goes to `geoip.dat` and is referenced in Xray as `geoip:name`
-
-<!-- TODO: describe the exact line format you support (one entry per line, prefixes such as domain:/full:/regexp: if any, comments, blank lines) and add a couple of files to examples/ -->
-
-## Input files
-
 Put one file per list into the input directory, one entry per line:
 
 - `name.cidr` goes to `geoip.dat` and is referenced in Xray as `geoip:name`
