@@ -78,44 +78,13 @@ Put one file per list into the input directory:
 - `name.domain` goes to `geosite.dat` and is referenced in Xray as `geosite:name`
 - `name.cidr` goes to `geoip.dat` and is referenced in Xray as `geoip:name`
 
-<<<<<<< HEAD
-One entry per line.
-
-`*.cidr` example (`examples/ip.cidr`):
-
-```
-8.8.8.8/32
-1.0.0.0/15
-```
-
-`*.domain` example (`examples/domains.domain`):
-
-```
-contoso.com
-full:www.contoso.com
-keyword:contoso
-regexp:^contoso\.com$
-```
-
-| Entry form        | Meaning                                  |
-|-------------------|------------------------------------------|
-| `contoso.com`     | domain and its subdomains                |
-| `full:host`       | exact host name only                     |
-| `keyword:text`    | any domain containing the text           |
-| `regexp:pattern`  | domain matching the regular expression   |
-=======
 <!-- TODO: describe the exact line format you support (one entry per line, prefixes such as domain:/full:/regexp: if any, comments, blank lines) and add a couple of files to examples/ -->
->>>>>>> 86e49e45e610e4d5efbb7c0221e4b9bb7c185c22
 
 Files with other extensions are ignored.
 
 ## Xray configuration
 
-<<<<<<< HEAD
-Xray must expose its API with `RoutingService` **and** `ReflectionService` enabled (the reflection service is required for the call to work). A minimal example:
-=======
 Xray must expose its API with `RoutingService` enabled. A minimal example:
->>>>>>> 86e49e45e610e4d5efbb7c0221e4b9bb7c185c22
 
 ```json
 {
