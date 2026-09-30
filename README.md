@@ -81,12 +81,19 @@ Put one file per list into the input directory:
 <!-- TODO: describe the exact line format you support (one entry per line, prefixes such as domain:/full:/regexp: if any, comments, blank lines) and add a couple of files to examples/ -->
 
 8.8.8.8/32
+
 1.1.1.0/16
 
+
 example.com
+
 full:www.example.com
+
 keyword:example
+
 regexp: ^example\.com$
+
+
 
 Files with other extensions are ignored.
 
