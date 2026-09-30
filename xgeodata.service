@@ -1,6 +1,7 @@
 [Unit]
 Description=xgeodata - geosite.dat/geoip.dat generator for Xray
-After=network.target local-fs.target
+After=network.target local-fs.target xray.service
+Wants=xray.service
 StartLimitIntervalSec=60
 StartLimitBurst=5
 
@@ -14,6 +15,11 @@ RestartSec=5
 
 User=root
 Group=root
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/etc/xray/sets
+ProtectHome=true
+PrivateTmp=true
 
 StandardOutput=journal
 StandardError=journal
