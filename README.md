@@ -103,9 +103,6 @@ regexp:^example\.com$
 | `keyword:text`   | any domain containing the text         |
 | `regexp:pattern` | domain matching the regular expression |
 
-
-Files with other extensions are ignored.
-
 ## Xray configuration
 
 Xray must expose its API with `RoutingService` enabled. A minimal example:
