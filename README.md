@@ -121,30 +121,14 @@ Xray must expose its API with `RoutingService` enabled. A minimal example:
 {
   "api": {
     "tag": "api",
-<<<<<<< HEAD
     "listen": "127.0.0.1:8888",
     "services": [
       "ReflectionService",
       "RoutingService"
-=======
-    "services": ["RoutingService"]
-  },
-  "inbounds": [
-    {
-      "tag": "api-in",
-      "listen": "127.0.0.1",
-      "port": 8888,
-      "protocol": "dokodemo-door",
-      "settings": { "address": "127.0.0.1" }
-    }
-  ],
-  "routing": {
-    "rules": [
-      { "type": "field", "inboundTag": ["api-in"], "outboundTag": "api" }
->>>>>>> 86e49e45e610e4d5efbb7c0221e4b9bb7c185c22
     ]
   }
 }
+
 ```
 
 **Security:** the Xray API has no authentication. Always bind it to `127.0.0.1` (or protect it with a tunnel/firewall). Anyone who can reach it can control routing.
